@@ -1,0 +1,24 @@
+# tyokalut (TIC-80-binääri + kirjastot, ladataan tarvittaessa)
+/tools/tic80
+/tools/lib/
+/tools/debs/
+/tools/*.zip
+/tools/luac
+/tools/lua
+
+# testien valitulosteet
+/test/fs/
+/test/shots/
+/test/out_*.log
+/test/cart_*.lua
+/test/*.tic
+luac.out
+
+# kortit: pidetään pääkortti, ei testikortteja
+*.tic.bak
+
+# TIC-80 ajonaikaiset
+.local/
+/test/carts/
+/test/out*.log
+__pycache__/
