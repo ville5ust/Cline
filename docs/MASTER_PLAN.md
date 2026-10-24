@@ -149,5 +149,6 @@ VISUAL-FEASIBILITY-AUDIT.md          <- Sub-agent 2: visual audit
 bare_knuckle_balance_audit_plan.md   <- Sub-agent 5: balance & fun audit
 docs/CART.md                         <- cartridge run guide + shipped mechanics
 cart/bareknuckle.lua                 <- THE CART (865 lines, M1-M4 slice)
+cart/sprites/SPRITE_SHEETS.md       <- M5 sprite sheets (faces S0-S5, gore decals, props, UI)
 tools/check_lua.py                   <- structural cart auditor
 ```

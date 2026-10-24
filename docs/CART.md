@@ -78,7 +78,9 @@ only and never feed sim state.
 
 ## Known gaps → next milestones
 
-- M5: sprite-based portraits/ring art (currently procedural), gore decal ladders 4–5 full
+- M5: sprite-based portraits/ring art (currently procedural; `cart/sprites/SPRITE_SHEETS.md`
+  is the M5 design doc: faces S0–S5, gore decals, ring props, UI icons) → **IN PROGRESS**;
+  sprite budget ≤200/bank + visual-checklist gates from [VISUAL-FEASIBILITY-AUDIT.md](VISUAL-FEASIBILITY-AUDIT.md)
 - M6: heir system (#29), Hall of Bruises archive UI (#27 full), Blue Hour raids (#26), chant register (#23), heckler gallery (#25), age-decline curve
 - Sound: `sfx()` bell/crowd stings
 - Balance pass: run 2,000 headless sims via the audit plan before human playtests
