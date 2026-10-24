@@ -147,4 +147,7 @@ docs/GORE_SYSTEMS.md                 <- Sub-agent 3: brutality & gore systems
 docs/ARCHITECTURE_AUDIT.md           <- Sub-agent 4: technical architecture audit
 VISUAL-FEASIBILITY-AUDIT.md          <- Sub-agent 2: visual audit
 bare_knuckle_balance_audit_plan.md   <- Sub-agent 5: balance & fun audit
+docs/CART.md                         <- cartridge run guide + shipped mechanics
+cart/bareknuckle.lua                 <- THE CART (865 lines, M1-M4 slice)
+tools/check_lua.py                   <- structural cart auditor
 ```
