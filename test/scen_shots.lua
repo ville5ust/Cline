@@ -16,11 +16,15 @@ function __SCN(n)
   G.plan[2].wps={{10,24,go=1},{16,20,go=0}}
   SCR('04_PLAN')
  elseif n==110 then G.injP[50]=true -- toiminta
- elseif n==150 then
+ elseif n==148 then
   local m=G.members[G.player]
   m.x=8.5 m.y=20.5 m.ang=0
-  local e=G.enemies[1] e.x=11.5 e.y=20.5 e.state=2
-  SCR('05_ACTION')
+  local e=G.enemies[1] e.x=12.0 e.y=20.5 e.state=2
+  local e2=G.enemies[2] e2.x=13.0 e2.y=22.0 e2.state=2
+elseif n==149 then
+  local m=G.members[G.player]
+  memberFire(m)
+elseif n==150 then SCR('05_ACTION')
  elseif n==152 then st2=true
  elseif n==160 then SCR('06_MAP')
  elseif n==162 then G.inj={}

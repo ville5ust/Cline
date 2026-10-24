@@ -197,7 +197,7 @@ function drawSprite3D(s,invDet,dirX,dirY,plX,plY,px,py,hor,mz)
  local tx=invDet*(dirY*relX-dirX*relY)
  local sx=60*(1+tx/tz)
  local hs=(136/tz)*s.h
- local ws=hs*s.spr.w/s.spr.h
+ local ws=hs*s.spr.w/s.spr.h/2
  local feetY=hor+68/tz
  local y1=feetY
  local y0=feetY-hs

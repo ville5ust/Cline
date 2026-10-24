@@ -17,10 +17,12 @@ end
 local function mkspr(art,skin,jd,jm,jl,acc)
  local h=#art local w=#art[1]
  local s={w=w,h=h,px={},jd=jd,jm=jm,jl=jl,skin=skin,acc=acc}
- for y=1,h do for x=1,w do
+ for y=1,h do
   s.px[y]={}
-  s.px[y][x]=ch2c(art[y]:sub(x,x),skin,jd,jm,jl,acc)
- end end
+  for x=1,w do
+   s.px[y][x]=ch2c(art[y]:sub(x,x),skin,jd,jm,jl,acc)
+  end
+ end
  return s
 end
 -- jalat -2 framerosta: frame0 suoraan, frame1 askel
@@ -30,7 +32,7 @@ local function legs(v)
  return {'.a..a.','.a..a.','..bb..','..bb..'} end
 local function mkbody(leg,gun)
  return {
- '.JjjjjJ.'..(gun and '.g' or '..'),
+ '.JaaaaJ.'..(gun and '.g' or '..'),
  'JjjjjjjJ'..(gun and 'gg' or '..'),
  'JjsssjjJ'..(gun and 'gg' or '..'),
  '.JEsEJ..'..(gun and '..' or '..'),
@@ -91,10 +93,10 @@ end
 SPR={}
 function genSprites()
  -- vihollinen: tiilipuseri (4/5/6), iho 15, aksentti 6
- SPR.ew0=mkspr(mkbody(0,false),15,4,5,6,6)
- SPR.ew1=mkspr(mkbody(1,false),15,4,5,6,6)
- SPR.eaim=mkspr(mkbody(2,true),15,4,5,6,6)
- SPR.edead=mkspr(mkdead(),15,4,5,6,6)
+ SPR.ew0=mkspr(mkbody(0,false),15,0,1,2,6)
+ SPR.ew1=mkspr(mkbody(1,false),15,0,1,2,6)
+ SPR.eaim=mkspr(mkbody(2,true),15,0,1,2,6)
+ SPR.edead=mkspr(mkdead(),15,0,1,2,6)
  SPR.tw0=mkspr(mkbody(0,false),15,7,8,9,15)
  SPR.tw1=mkspr(mkbody(1,false),15,7,8,9,15)
  SPR.taim=mkspr(mkbody(2,true),15,7,8,9,15)

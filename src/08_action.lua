@@ -19,12 +19,6 @@ function actionPhase()
  if kd(4) then s=true mvy=mvy+1 end                -- D: oikea
  if bd(2) then m.ang=m.ang-0.062 end               -- vasen kaanto
  if bd(3) then m.ang=m.ang+0.062 end               -- oikea
- -- hiirikatselu (valinnainen): hiiren x keskipisteen ymparilla
- local mx=mouse()
- if type(mx)=='number' then
-  local off=mx-120
-  if math.abs(off)>6 then m.ang=m.ang+off*0.0006 end
- end
  if m.reload>0 then
   m.reload=m.reload-dt
   if m.reload<=0 then
