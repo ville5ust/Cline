@@ -237,7 +237,8 @@ function rosterUD()
   local f=G.fighters[i]
   if i==G.sel then rect(2,y-2,118,18,8) end
   drawFace(4,y,f)
-  local col=C_TXT if dead(f) then col=C_BLOOD elseif retired(f) then col=C_DIM end
+  local col=C_TXT
+  if dead(f) then col=C_BLOOD elseif retired(f) then col=C_DIM end
   print(f.name,22,y,C_TXT,false,false)
   print("P"..f.pow.." T"..f.tgh.." S"..f.sta.." D"..f.spd.." age"..f.age,22,y+8,C_DIM)
   -- wound chips
@@ -313,7 +314,8 @@ function marketUD()
  end
  y=y+4
  for i=1,#MKITEMS do
-  local col=C_TXT if i==MK.cur then rect(2,y-2,110,9,8) col=C_GOLD end
+  local col=C_TXT
+  if i==MK.cur then rect(2,y-2,110,9,8) col=C_GOLD end
   print(MKITEMS[i],4,y,col)
   y=y+10
  end
@@ -442,7 +444,8 @@ function resolveRound(oi,oo)
    ae.stam=ae.stam+6
    if ao==6 then table.insert(ev,{t="COVER",who=mine}) end
   elseif math.random(100)<=acc then
-   local mult=1.5 if reg==2 then mult=1.0 elseif reg==3 then mult=0.8 elseif reg==4 then mult=1.2 end
+   local mult=1.5
+   if reg==2 then mult=1.0 elseif reg==3 then mult=0.8 elseif reg==4 then mult=1.2 end
    local dmg=atk.pow*mult-def.tgh*0.5+math.random(3)
    if ao==2 then dmg=dmg*1.4 end
    if ao==4 then dmg=dmg*2 end -- BRAWL doubles both ways
@@ -587,16 +590,14 @@ function knockTick()
 end
 
 function koEnd(mineDown)
- local loser=mineDown and F.opp or F.me
- if not mineDown and F.toweldeclined==0 then F.toweldeclined=F.toweldeclined+1 end
- -- death risk: my man KO'd cold, towel declined, head DOWN (GORE §3)
+ -- mineDown==true <=> vastustaja putosi (minä osasin) -> VOITIN (minä olin voittaja)
  if not mineDown and F.toweldeclined>=1 and F.me.wound[1]>=17 and math.random(100)<=3 then
   F.me.scar=F.me.scar+16
   G.tone=G.tone+1
   endFight("DEATH")
   return
  end
- endFight("KO",not mineDown)
+ endFight("KO", mineDown)
 end
 
 function endRound()
@@ -788,7 +789,8 @@ function fightDraw()
  -- orders panel
  if F.phase=="MENU" then
   for i=1,6 do
-   local col=12 if i==F.cur then rect(2,17+(i-1)*9,52,9,8) col=4 end
+   local col=12
+   if i==F.cur then rect(2,17+(i-1)*9,52,9,8) col=4 end
    print(ORDERS[i],4,18+(i-1)*9,col)
    print("s-"..ORDER_COST[i],40,18+(i-1)*9,14)
   end
