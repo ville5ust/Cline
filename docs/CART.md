@@ -19,6 +19,15 @@ No external assets: faces, ring, bars and gore are drawn procedurally with
 `circ/rect/pix`, so the cart is 100 % self-contained and modifiable from the
 TIC-80 editor.
 
+## Desktop cart
+
+The cart is also placed on the desktop for direct loading:
+
+```
+/home/node/Desktop/BARE-KNUCKLE.lua   <- text cart (run: tic80 /home/node/Desktop/BARE-KNUCKLE.lua)
+bareknuckle.tic                       <- binary cart (create via TIC-80: load + save)
+```
+
 ## Controls
 
 | Btn | Keyboard | Action |
